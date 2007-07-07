@@ -1,0 +1,54 @@
+# Project: Analisador Sintatico
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ 6.10.2 on 30/06/07 23:06
+
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = windres.exe
+OBJ       = Objects/MingW/Compilador.o Objects/MingW/Sintatico.o Objects/MingW/TabelaHash.o Objects/MingW/NoHash.o Objects/MingW/NoHash_VarSimples.o Objects/MingW/NoHash_ParForm.o Objects/MingW/NoHash_Proc.o Objects/MingW/ArvoreDerivacao.o
+LINKOBJ   = Objects/MingW/Compilador.o Objects/MingW/Sintatico.o Objects/MingW/TabelaHash.o Objects/MingW/NoHash.o Objects/MingW/NoHash_VarSimples.o Objects/MingW/NoHash_ParForm.o Objects/MingW/NoHash_Proc.o Objects/MingW/ArvoreDerivacao.o
+LIBS      = -L"C:/Arquivos de programas/Dev-Cpp/Lib"  
+INCS      = -I"include"
+CXXINCS   = -I"C:/Arquivos de programas/Dev-Cpp/lib/gcc/mingw32/3.4.2/include" -I"C:/Arquivos de programas/Dev-Cpp/include/c++/3.4.2/backward" -I"C:/Arquivos de programas/Dev-Cpp/include/c++/3.4.2/mingw32" -I"C:/Arquivos de programas/Dev-Cpp/include/c++/3.4.2" -I"C:/Arquivos de programas/Dev-Cpp/include" -I"C:/Arquivos de programas/Dev-Cpp/" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/msw" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/generic" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/fl" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/gizmos" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/html" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/mmedia" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/net" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/ogl" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/plot" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/protocol" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/stc" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/svg" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/xml" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx/xrc" -I"C:/Arquivos de programas/Dev-Cpp/include/common/wx" -I"C:/Arquivos de programas/Dev-Cpp/include/common"
+RCINCS    = --include-dir "C:/ARQUIV~1/Dev-Cpp/include/common"
+BIN       = Output/MingW/Analisador\ Sintatico.exe
+DEFINES   = 
+CXXFLAGS  = $(CXXINCS) $(DEFINES)  
+CFLAGS    = $(INCS) $(DEFINES)  
+GPROF     = gprof.exe
+RM        = rm -f
+LINK      = g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "Output\MingW\Analisador Sintatico.exe" $(LIBS)
+
+Objects/MingW/Compilador.o: $(GLOBALDEPS) Compilador.cpp Lexico.h atomo.h Sintatico.h Atomo.h TabelaHash.h NoHash.h Atomo.h ArvoreDerivacao.h NoArvore.h Atomo.h TabelaHash.h TabelaHash.h NoHash_ParForm.h NoHash.h ArvoreDerivacao.h
+	$(CPP) -c Compilador.cpp -o Objects/MingW/Compilador.o $(CXXFLAGS)
+
+Objects/MingW/Sintatico.o: $(GLOBALDEPS) Sintatico.cpp Sintatico.h Atomo.h TabelaHash.h NoHash.h Atomo.h ArvoreDerivacao.h NoArvore.h Atomo.h TabelaHash.h TabelaHash.h NoHash_ParForm.h NoHash.h TabelaHash.h NoHash_VarSimples.h NoHash.h NoHash_ParForm.h NoHash_Proc.h NoHash.h NoHash_ParForm.h Atomo.h
+	$(CPP) -c Sintatico.cpp -o Objects/MingW/Sintatico.o $(CXXFLAGS)
+
+Objects/MingW/TabelaHash.o: $(GLOBALDEPS) TabelaHash.cpp TabelaHash.h NoHash.h Atomo.h NoHash.h NoHash_VarSimples.h NoHash.h
+	$(CPP) -c TabelaHash.cpp -o Objects/MingW/TabelaHash.o $(CXXFLAGS)
+
+Objects/MingW/NoHash.o: $(GLOBALDEPS) NoHash.cpp NoHash.h Atomo.h Atomo.h
+	$(CPP) -c NoHash.cpp -o Objects/MingW/NoHash.o $(CXXFLAGS)
+
+Objects/MingW/NoHash_VarSimples.o: $(GLOBALDEPS) NoHash_VarSimples.cpp NoHash_VarSimples.h NoHash.h Atomo.h
+	$(CPP) -c NoHash_VarSimples.cpp -o Objects/MingW/NoHash_VarSimples.o $(CXXFLAGS)
+
+Objects/MingW/NoHash_ParForm.o: $(GLOBALDEPS) NoHash_ParForm.cpp NoHash_ParForm.h NoHash.h Atomo.h
+	$(CPP) -c NoHash_ParForm.cpp -o Objects/MingW/NoHash_ParForm.o $(CXXFLAGS)
+
+Objects/MingW/NoHash_Proc.o: $(GLOBALDEPS) NoHash_Proc.cpp NoHash_Proc.h NoHash.h Atomo.h NoHash_ParForm.h NoHash.h
+	$(CPP) -c NoHash_Proc.cpp -o Objects/MingW/NoHash_Proc.o $(CXXFLAGS)
+
+Objects/MingW/ArvoreDerivacao.o: $(GLOBALDEPS) ArvoreDerivacao.cpp ArvoreDerivacao.h NoArvore.h Atomo.h TabelaHash.h NoHash.h Atomo.h TabelaHash.h
+	$(CPP) -c ArvoreDerivacao.cpp -o Objects/MingW/ArvoreDerivacao.o $(CXXFLAGS)
