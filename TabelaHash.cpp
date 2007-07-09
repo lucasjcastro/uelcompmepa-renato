@@ -32,7 +32,7 @@ int TabelaHash::calculaPosicao(NoHash *noAtual){
 			h = alpha*h + (int) token[i];
 	}
 	 
-    return h % 37;;
+    return h % 37;
 }
 
 bool TabelaHash::estaInserido(NoHash *noAtual){
