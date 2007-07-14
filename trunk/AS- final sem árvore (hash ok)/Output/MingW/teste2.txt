@@ -1,0 +1,12 @@
+program teste;
+
+function c(k,m: integer): integer;		
+begin
+	read(k);
+	k:= m * k;
+	t(k,m)
+end;
+
+begin
+     write(a+b)	
+end.
